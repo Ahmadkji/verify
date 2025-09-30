@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   },
   
   // Bundle optimization
-  swcMinify: true,
+  // swcMinify is removed in Next.js 15; SWC minification is always on.
   
   // Headers for caching and security
   async headers() {
@@ -56,6 +56,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  
+  // Turbopack configuration
+  turbopack: {
+    // Explicitly set the root to the repository root to avoid inference warnings
+    root: '/Users/macbookpro/Vercelo'
+  }
 };
 
 export default nextConfig;
